@@ -1,0 +1,12 @@
+C:\Users\HTPC_USER\source\repos\TaskManage01\TaskDataAccess\bin\Debug\TaskDataAccess.dll.config
+C:\Users\HTPC_USER\source\repos\TaskManage01\TaskDataAccess\bin\Debug\TaskDataAccess.dll
+C:\Users\HTPC_USER\source\repos\TaskManage01\TaskDataAccess\bin\Debug\TaskDataAccess.pdb
+C:\Users\HTPC_USER\source\repos\TaskManage01\TaskDataAccess\bin\Debug\EntityFramework.dll
+C:\Users\HTPC_USER\source\repos\TaskManage01\TaskDataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\HTPC_USER\source\repos\TaskManage01\TaskDataAccess\bin\Debug\EntityFramework.xml
+C:\Users\HTPC_USER\source\repos\TaskManage01\TaskDataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\HTPC_USER\source\repos\TaskManage01\TaskDataAccess\obj\Debug\TaskDataAccess.csprojAssemblyReference.cache
+C:\Users\HTPC_USER\source\repos\TaskManage01\TaskDataAccess\obj\Debug\TaskDataAccess.csproj.CoreCompileInputs.cache
+C:\Users\HTPC_USER\source\repos\TaskManage01\TaskDataAccess\obj\Debug\TaskDataAccess.csproj.CopyComplete
+C:\Users\HTPC_USER\source\repos\TaskManage01\TaskDataAccess\obj\Debug\TaskDataAccess.dll
+C:\Users\HTPC_USER\source\repos\TaskManage01\TaskDataAccess\obj\Debug\TaskDataAccess.pdb
