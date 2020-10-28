@@ -90,3 +90,6 @@ C:\Users\HTPC_USER\source\repos\TaskManage01\TaskManage01\obj\Debug\TaskManage01
 C:\Users\HTPC_USER\source\repos\TaskManage01\TaskManage01\obj\Debug\TaskManage01.pdb
 C:\Users\HTPC_USER\source\repos\TaskManage01\TaskManage01\bin\EntityFramework.SqlServer.dll
 C:\Users\HTPC_USER\source\repos\TaskManage01\TaskManage01\bin\EntityFramework.SqlServer.xml
+C:\Users\HTPC_USER\source\repos\TaskManage01\TaskManage01\bin\System.Web.Cors.dll
+C:\Users\HTPC_USER\source\repos\TaskManage01\TaskManage01\bin\System.Web.Http.Cors.dll
+C:\Users\HTPC_USER\source\repos\TaskManage01\TaskManage01\bin\System.Web.Http.Cors.xml

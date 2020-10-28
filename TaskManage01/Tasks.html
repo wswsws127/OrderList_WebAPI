@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var ulStatusInfo = $('#ulStatusInfo');
+            var tableTasks = $('#tableTasks');
+
+            $('#btn').click(function () {
+                //1. authorize
+                // Get the username & password from textboxes
+                var username = $('#txtUsername').val();
+                var password = $('#txtPassword').val();
+                ulStatusInfo.empty();
+
+                //2. get all task data
+                $.ajax({
+                    type: 'GET',
+                    url: 'api/Tasks',
+                    dataType: 'json',
+                    // Specify the authentication header
+                    // btoa() method encodes a string to Base64
+                    headers: {
+                        'Authorization': 'Basic ' + btoa(username + ':' + password)
+                    },
+                    success: function (data) {
+                        tableTasks.empty();
+                        var tableHead = '<tr><th> Task ID</th><th>Quote Type</th><th>Contact ID</th><th>Description</th><th>Due Date</th></tr>';
+                        tableTasks.append(tableHead);
+                        $.each(data, function (index, val) {
+                            var stringHtml = '';
+                            var quoteID = val.QuoteID + '';
+                            var quoteType = val.QuoteType + '';
+                            var contactID = val.ContactID + '';
+                            var taskDescription = val.TaskDescription + '';
+                            var dueDate = val.TaskDueDate + '';
+                            var date = new Date(dueDate);
+                            var formatDate = date.toLocaleString('en-US', { year: "numeric", month: "numeric", day: "numeric" });
+                            stringHtml += '<tr><td>' + quoteID + '</td><td>' + quoteType + '</td><td>'
+                                + contactID + '</td><td>' + taskDescription + '</td><td>'
+                                + formatDate + '</td></tr>';
+
+                            tableTasks.append(stringHtml);
+                        });
+                    },
+                    complete: function (jqXHR) {
+                        if (jqXHR.status == '401') {
+                            ulStatusInfo.empty();
+                            ulStatusInfo.append('<li style="color:red">'
+                                + jqXHR.status + ' : ' + jqXHR.statusText + '</li>')
+                        }
+                    }
+                });
+            });
+            //authorize + get data when click on the button
+
+
+
+            $('#btnClear').click(function () {
+                tableTasks.empty();
+                ulStatusInfo.empty();
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        Username : <input type="text" id="txtUsername" />
+        Password : <input type="password" id="txtPassword" />
+        <br /><br />
+    
+        <div>
+            <input id="btn" type="button" value="Authenticate and Get All Tasks" />
+            <input id="btnClear" type="button" value="Clear" />
+            <ul id="ulStatusInfo"></ul> 
+
+        </div>
+        <div class="table-responsive">
+            <table id="tableTasks" class="table table-striped">
+           
+            </table>
+        </div>
+     </div>
+</body>
+</html>

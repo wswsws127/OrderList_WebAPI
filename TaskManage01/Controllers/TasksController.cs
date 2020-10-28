@@ -9,8 +9,10 @@ using TaskDataAccess;
 
 namespace TaskManage01.Controllers
 {
+    [BasicAuthentication]
     public class TasksController : ApiController
     {
+        
         public IEnumerable<tblTask> Get()
         {
             using (TaskDBEntities entities = new TaskDBEntities()) 
@@ -64,6 +66,7 @@ namespace TaskManage01.Controllers
             {
                 using (TaskDBEntities entities = new TaskDBEntities())
                 {
+
                     var entity = entities.tblTask.FirstOrDefault(t => t.QuoteID == id);
                     if (entity == null)
                     {
