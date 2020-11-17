@@ -5,14 +5,18 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using TaskDataAccess;
 
 namespace TaskManage01.Controllers
 {
-    [BasicAuthentication]
+    [Authorize]
+    //[BasicAuthentication]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class TasksController : ApiController
     {
-        
+        [HttpGet]
+       
         public IEnumerable<tblTask> Get()
         {
             using (TaskDBEntities entities = new TaskDBEntities()) 
@@ -21,6 +25,8 @@ namespace TaskManage01.Controllers
             }
         }
 
+        [HttpGet]
+        
         public HttpResponseMessage Get(int id)
         {
             using (TaskDBEntities entities = new TaskDBEntities())
@@ -39,6 +45,8 @@ namespace TaskManage01.Controllers
             }
         }
 
+        [HttpPost]
+       
         public HttpResponseMessage Post([FromBody]tblTask newTask) 
         {
             try {
@@ -60,6 +68,8 @@ namespace TaskManage01.Controllers
             }
         }
 
+        [HttpDelete]
+        //[Route("DeleteTaskDetails")]
         public HttpResponseMessage Delete(int id) 
         {
             try
@@ -89,6 +99,8 @@ namespace TaskManage01.Controllers
             }
         }
 
+        [HttpPut]
+        //[Route("UpdateTaskDetails")]
         public HttpResponseMessage Put(int id, [FromBody] tblTask newTask)
         {
             try {
