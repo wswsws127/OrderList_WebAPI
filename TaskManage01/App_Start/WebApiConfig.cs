@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Cors;
+using System.Web.Http.ExceptionHandling;
+using TaskManage01.Controllers;
 
 namespace TaskManage01
 {
@@ -10,13 +12,18 @@ namespace TaskManage01
     {
         public static void Register(HttpConfiguration config)
         {
+            //register the ExceptionHandler
+            config.Services.Replace(typeof(IExceptionHandler), new OopsExceptionHandler());
+
+            #region CORS
             // Enable CORS package. to allow host:4200 to comsume methods in this project
             config.EnableCors(new EnableCorsAttribute("*",  "*", "*"));//origins,headers,methods 
+            #endregion 
 
             // Web API routes
             config.MapHttpAttributeRoutes();
 
-            config.MessageHandlers.Add(new TokenValidationHandler());
+            //config.MessageHandlers.Add(new TokenValidationHandler());
 
             config.Routes.MapHttpRoute(
               name: "DefaultApi",

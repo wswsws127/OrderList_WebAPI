@@ -10,37 +10,56 @@ using TaskDataAccess;
 
 namespace TaskManage01.Controllers
 {
-    [Authorize]
+    //[Authorize]
     //[BasicAuthentication]
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class TasksController : ApiController
     {
+
+        //[NotImplExceptionFilter]
+        //public tblTask GetNewTask(int id)
+        //{
+        //    throw new NotImplementedException("This method is not implemented");
+        //}
+
+        
         [HttpGet]
-       
+       //[NotImplExceptionFilter]
         public IEnumerable<tblTask> Get()
         {
             using (TaskDBEntities entities = new TaskDBEntities()) 
             {
+                //throw new NotImplementedException("This method is not implemented");
                 return entities.tblTask.ToList();
             }
         }
 
         [HttpGet]
         
-        public HttpResponseMessage Get(int id)
+       // public HttpResponseMessage Get(int id)
+         public tblTask Get(int id)
         {
             using (TaskDBEntities entities = new TaskDBEntities())
             {
                 var entity= entities.tblTask.FirstOrDefault(t => t.QuoteID==id);
+                
+
                 if (entity != null)
                 {
                     //return 200 OK
-                    return Request.CreateResponse(HttpStatusCode.OK, entity);
+                    //return Request.CreateResponse(HttpStatusCode.OK, entity);
+                    return entity;
                 }
-                else 
+                else
                 {
+                    var resp = new HttpResponseMessage(HttpStatusCode.NotFound)
+                    {
+                        Content = new StringContent(string.Format("No task with ID = {0}", id)),
+                        ReasonPhrase = "Task ID Not Found"
+                    };
+                    throw new HttpResponseException(resp);
                     //return 404 not found
-                    return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Task with ID="+id.ToString() +" is not found.");
+                    //return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Task with ID=" + id.ToString() + " is not found.");
                 }
             }
         }

@@ -153,3 +153,16 @@ C:\Users\HTPC_USER\source\repos\TaskManage01\TaskManage01\bin\Microsoft.AspNetCo
 C:\Users\HTPC_USER\source\repos\TaskManage01\TaskManage01\bin\Microsoft.AspNetCore.Http.Features.xml
 C:\Users\HTPC_USER\source\repos\TaskManage01\TaskManage01\bin\Microsoft.Extensions.FileProviders.Abstractions.xml
 C:\Users\HTPC_USER\source\repos\TaskManage01\TaskManage01\bin\Microsoft.Net.Http.Headers.xml
+C:\Users\HTPC_USER\source\repos\TaskManage01\TaskManage01\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\HTPC_USER\source\repos\TaskManage01\TaskManage01\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\HTPC_USER\source\repos\TaskManage01\TaskManage01\bin\Microsoft.Owin.dll
+C:\Users\HTPC_USER\source\repos\TaskManage01\TaskManage01\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\HTPC_USER\source\repos\TaskManage01\TaskManage01\bin\Microsoft.Owin.Security.dll
+C:\Users\HTPC_USER\source\repos\TaskManage01\TaskManage01\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\HTPC_USER\source\repos\TaskManage01\TaskManage01\bin\Owin.dll
+C:\Users\HTPC_USER\source\repos\TaskManage01\TaskManage01\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\HTPC_USER\source\repos\TaskManage01\TaskManage01\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\HTPC_USER\source\repos\TaskManage01\TaskManage01\bin\Microsoft.Owin.xml
+C:\Users\HTPC_USER\source\repos\TaskManage01\TaskManage01\bin\Microsoft.Owin.Security.xml
+C:\Users\HTPC_USER\source\repos\TaskManage01\TaskManage01\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\HTPC_USER\source\repos\TaskManage01\TaskManage01\bin\Microsoft.Owin.Security.OAuth.xml
